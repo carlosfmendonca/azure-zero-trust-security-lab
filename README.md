@@ -1,58 +1,50 @@
 # Azure Zero Trust Security Lab
+> Hands-on project focused on identity-based security and threat detection in Azure cloud environments.
 
 ## 🔐 Overview
-This project simulates a real-world cloud security environment using Microsoft Azure, focusing on identity-based security and Zero Trust principles.
+This project simulates a real-world Cloud Security environment using Microsoft Azure, focusing on identity-based security, Zero Trust principles, and threat detection.
+
+The lab demonstrates how modern security architectures rely on identity as the primary control plane instead of traditional network perimeters.
+
+---
 
 ## 🎯 Objective
-Design a secure cloud architecture where:
-- Identity is the primary control plane
-- Access is continuously validated
-- Threats are detected in real time
+Build a secure cloud environment capable of:
+
+- Enforcing identity-based access control
+- Detecting suspicious activity in real time
+- Reducing risk of unauthorized access
+- Applying Zero Trust principles in practice
+
+---
 
 ## 🧱 Architecture
 The environment includes:
-- Microsoft Entra ID (IAM)
-- Azure Virtual Machine (target resource)
-- Microsoft Sentinel (SIEM)
-- Defender for Cloud
+
+- **Microsoft Entra ID (IAM)** → Identity and access control (MFA, Conditional Access)
+- **Azure Virtual Machine** → Target resource
+- **Microsoft Sentinel (SIEM)** → Log collection and threat detection
+- **Defender for Cloud** → Security posture management
+
+---
 
 ## 🔄 Security Flow
-1. User authentication via Entra ID (MFA enforced)
-2. Conditional Access policies applied
-3. Access to Azure resource granted
-4. Logs collected and sent to Sentinel
-5. Detection of suspicious activity using KQL
 
-## 🔍 Detection Use Case
-Simulated brute-force attack detection using:
+1. User attempts authentication via Entra ID
+2. Conditional Access policies validate access (MFA enforced)
+3. Access is granted to Azure resources
+4. Security logs are generated and sent to Microsoft Sentinel
+5. Sentinel analyzes events and detects suspicious behavior
+6. Alerts are triggered for investigation
+
+---
+
+## 🔍 Detection Use Case — Brute Force Attack
+
+This lab simulates multiple failed login attempts and detects abnormal behavior using KQL:
 
 ```kql
 SecurityEvent
 | where EventID == 4625
 | summarize FailedAttempts = count() by Account, bin(TimeGenerated, 5m)
 | where FailedAttempts > 5
-
-
----
-
-## 🟡 2. Falta “prova visual” (IMPORTANTE)
-
-👉 Seu diagrama está lá (bom)
-
-Mas faltam prints de:
-
-- Sentinel  
-- alerta  
-- logs  
-
----
-
-### 💡 Faça isso:
-
-Adicione pasta:
-
-```plaintext
-screenshots/
-
-## 💼 Business Impact
-This approach reduces risk of unauthorized access and improves visibility of threats in cloud environments.
