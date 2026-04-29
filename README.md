@@ -1,6 +1,9 @@
 # Azure Zero Trust Security Lab
 
+> Identity-based threats are one of the primary attack vectors in cloud environments, and this project demonstrates how to detect and mitigate them using Azure security tools.
+
 > Hands-on project simulating a real-world Cloud Security environment using Zero Trust principles, identity-based access control, and threat detection with Microsoft Sentinel.
+> Defender for Cloud alerts are integrated into Microsoft Sentinel to provide centralized visibility and correlation of security events.
 
 ## 🔐 Overview
 This project simulates a real-world Cloud Security environment using Microsoft Azure, focusing on identity-based security, Zero Trust principles, and threat detection.
@@ -65,6 +68,12 @@ SecurityEvent
 
 ---
 
+## 🔎 Investigation
+
+Detected events can be correlated with identity logs and enriched with additional context to support incident investigation and response.
+
+---
+
 ## 🏦 Fintech Security Context
 
 In financial environments, identity-based attacks are one of the main vectors for unauthorized access.
@@ -83,4 +92,16 @@ This lab demonstrates how:
 - Log collection and centralization
 - Real-time detection with KQL
 - Security monitoring with SIEM (Sentinel)
+
+---
+
+## 📊 Security Operations Perspective
+
+This lab simulates a simplified SOC workflow:
+- Log ingestion
+- Detection
+- Alerting
+- Investigation
+
+Providing a practical view of cloud security operations.
 
