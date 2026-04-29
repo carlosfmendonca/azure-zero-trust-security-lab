@@ -105,3 +105,25 @@ This lab simulates a simplified SOC workflow:
 
 Providing a practical view of cloud security operations.
 
+---
+
+## ⚡ Response
+
+Potential response actions include:
+- Account lockout after multiple failed attempts
+- Conditional Access policy enforcement
+- Alert escalation for investigation
+
+---
+
+## 🎯 MITRE ATT&CK Mapping
+
+- Technique: T1110 (Brute Force)
+- Tactic: Credential Access
+
+This lab simulates detection of credential-based attacks aligned with MITRE ATT&CK framework.
+
+This architecture follows an identity-first security model, where access decisions are based on user context rather than network location.
+
+
+
